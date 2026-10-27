@@ -1,1 +1,61 @@
-a
+<!doctype html>
+<html lang="en" style="background-color: #000">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mohammadSatrap</title>
+
+    <style>
+      .bg {
+        font-size: 14px;
+        background-color: #000;
+        color: #00e700;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 490px;
+        padding: 7px;
+        border-radius: 7px;
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: plaintext;
+      }
+    </style>
+  </head>
+  <body>
+    <pre id="dataBlock" class="bg"></pre>
+  </body>
+
+  <script>
+    const main = () => {
+      const data = {
+        name: "Mohammad",
+        lastname: "Dinarvand",
+        contact: {
+          phones: ["+989011414296"],
+          email: "mohammadsatrap@gmail.com",
+          linkedin: "https://www.linkedin.com/in/mohammad-dinarvand/",
+          github: "https://github.com/mohammadsatrap",
+        },
+        projects: [
+          {
+            title: "backed Developer",
+            url: "http://vitalclub.ir/",
+          },
+          {
+            title: "Android developer",
+            url: "https://cafebazaar.ir/app/bst.berkma.thermochart",
+          },
+          {
+            title: "full stack developer",
+            url: "https://iranpublicdata.ir/",
+          },
+        ],
+      };
+
+      const element = document.getElementById("dataBlock");
+      element.innerHTML = JSON.stringify(data, null, 4);
+    };
+
+    main();
+  </script>
+</html>
