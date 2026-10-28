@@ -7,21 +7,32 @@
 
     <style>
       .bg {
+        height: 100%;
+        width: fit-content;
+        overflow-x: auto;
+        overflow-y: auto;
         font-size: 14px;
         background-color: #000;
         color: #00e700;
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: 490px;
         padding: 7px;
         border-radius: 7px;
         direction: ltr;
         text-align: left;
         unicode-bidi: plaintext;
       }
+      .btn-copy {
+        color: #a7a7a7;
+        background-color: #474747;
+        font-family: monospace;
+        font-size: 11px;
+        padding: 3px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
+    <button id="btn-copy" class="btn-copy">copy json data</button>
     <pre id="dataBlock" class="bg"></pre>
   </body>
 
@@ -30,30 +41,215 @@
       const data = {
         name: "Mohammad",
         lastname: "Dinarvand",
+        title: "Senior Software Developer & Technology Manager",
+        location: "Tehran, Iran",
+        birthDate: {
+          iso: "1994-01-14T00:00:00.000Z",
+          jalali: "1372-10-24",
+        },
+        lastUpdate: "2025-10-28T14:00:00.000Z",
+        profile:
+          "Technology leader and software developer with 10+ years of experience in software development, mobile and web applications, technical team management, and hardware-software integration. Experienced in building scalable web platforms, desktop applications, IoT solutions, cybersecurity systems, and AI-powered computer vision applications. Skilled in technology strategy, system architecture, and end-to-end product development.",
+
         contact: {
           phones: ["+989011414296"],
           email: "mohammadsatrap@gmail.com",
           linkedin: "https://www.linkedin.com/in/mohammad-dinarvand/",
           github: "https://github.com/mohammadsatrap",
         },
+
+        skills: {
+          programmingLanguages: [
+            "JavaScript",
+            "Node.js",
+            "Python",
+            "PHP",
+            "Java",
+            "C++",
+            "HTML",
+            "CSS",
+          ],
+
+          frameworks: ["Vue.js", "NestJS", "PyQt"],
+
+          databases: ["MongoDB", "MySQL", "Redis"],
+
+          technologies: [
+            "RESTful APIs",
+            "Socket.IO",
+            "UDP",
+            "Docker",
+            "OpenStreetMap",
+            "Linux",
+            "Bash Scripting",
+            "Git",
+            "Arduino",
+            "IoT",
+            "Android Development",
+          ],
+
+          expertise: [
+            "Software Architecture",
+            "Technical Leadership",
+            "Team Management",
+            "Technology Strategy",
+            "Full-Stack Development",
+            "Backend Development",
+            "Hardware-Software Integration",
+            "Project Management",
+            "Product Development",
+            "AI Solutions",
+            "Real-Time Systems",
+          ],
+        },
+
+        education: [
+          {
+            degree: "Master of Business Administration (MBA)",
+            institution: "TBS",
+          },
+          {
+            degree: "Bachelor of Mechanical Engineering",
+            institution: "Islamic Azad University, Karaj",
+          },
+          {
+            degree: "Bachelor of Computer Science",
+            institution: "Islamic Azad University - eCampus",
+          },
+        ],
+
+        experience: [
+          {
+            company: "NthOptics",
+            position: "Chief Technology Officer",
+            responsibilities: [
+              "Leading software development teams and managing technology projects using Qt, C++, and FPGA.",
+              "Designing complex software and hardware architectures for optoelectronic systems.",
+              "Developing AI-powered computer vision solutions using PyTorch, TensorFlow, and OpenCV.",
+              "Improving development processes and team productivity.",
+              "Leading technology strategy and digital transformation initiatives.",
+              "Managing cross-functional teams and hardware-software integration projects.",
+            ],
+          },
+          {
+            company: "NthOptics",
+            position: "Full Stack Developer",
+            responsibilities: [
+              "Developing web applications using Vue.js and Node.js.",
+              "Building desktop applications using PyQt.",
+              "Implementing offline mapping solutions with Docker and OpenStreetMap.",
+              "Developing RESTful APIs and database solutions.",
+              "Implementing real-time data transmission using Socket.IO and UDP.",
+              "Developing camera control software and serial communication applications for laser devices.",
+            ],
+          },
+          {
+            company: "Hoosh Saman (Ernika)",
+            position: "Software Developer - Backend Team Lead",
+            responsibilities: [
+              "Developing integrated camera management software using Node.js, NestJS, and Vue.js.",
+              "Building surveillance systems with real-time monitoring capabilities.",
+              "Leading backend development activities and supporting system integration.",
+            ],
+          },
+          {
+            company: "Nasim Atlas",
+            position: "Software Developer",
+            responsibilities: [
+              "Developing ERP panels using Node.js and Vue.js.",
+              "Building business management systems.",
+            ],
+          },
+          {
+            company: "Fanava - Security Division",
+            position: "Software Developer",
+            responsibilities: [
+              "Developing DDoS attack analysis panels using PHP and Vue.js.",
+              "Building security monitoring dashboards for threat detection and analysis.",
+            ],
+          },
+          {
+            company: "Tachara",
+            position: "CTO & Software Developer",
+            responsibilities: [
+              "Developing comprehensive real estate management software.",
+              "Leading and guiding the technical team.",
+              "Managing technology operations and product development.",
+              "Designing software architecture and selecting technology stacks.",
+            ],
+          },
+          {
+            company: "KOAN",
+            position: "CEO & Software Developer",
+            responsibilities: [
+              "Developing hardware and IoT software products.",
+              "Implementing smart automation for Bitcoin mining farms.",
+              "Developing web and mobile applications.",
+              "Managing startup operations and product development.",
+              "Leading teams and developing business strategies.",
+            ],
+          },
+          {
+            company: "SHEZAN - HAMAVA",
+            position: "IoT Program Manager & Software Developer",
+            responsibilities: [
+              "Managing IoT projects and coordinating cross-functional teams.",
+              "Developing internal management dashboards.",
+              "Analyzing team performance metrics and production reports.",
+              "Creating reporting systems for teams and board presentations.",
+              "Monitoring KPIs and reporting on accelerator program performance.",
+            ],
+          },
+          {
+            company: "Freelance",
+            position: "Software Developer",
+            responsibilities: [
+              "Developing custom web and mobile applications for clients.",
+              "Serving as the main technical partner for Partoshid Advertising Company (Golrang Group).",
+              "Developing advertising campaigns, control panels, and landing pages.",
+              "Building marketing automation tools and end-to-end digital marketing solutions.",
+            ],
+          },
+        ],
+
         projects: [
           {
-            title: "backed Developer",
-            url: "http://vitalclub.ir/",
+            title: "VitalClub",
+            category: "Backend Development",
+            url: "https://vitalclub.ir/",
+            technologies: ["Node.js", "MongoDB", "REST API"],
           },
           {
-            title: "Android developer",
+            title: "ThermoChart",
+            category: "Android Development",
             url: "https://cafebazaar.ir/app/bst.berkma.thermochart",
+            technologies: ["Android", "Java"],
           },
           {
-            title: "full stack developer",
+            title: "IranPublicData",
+            category: "Full-Stack Development",
             url: "https://iranpublicdata.ir/",
+            technologies: ["Node.js", "Vue.js", "MongoDB"],
           },
         ],
       };
 
       const element = document.getElementById("dataBlock");
       element.innerHTML = JSON.stringify(data, null, 4);
+
+      document
+        .getElementById("btn-copy")
+        .addEventListener("click", copyJsonData);
+
+      function copyJsonData() {
+        var copyText = JSON.stringify(data);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText);
+
+        // Alert the copied text
+        alert("Copied the text: " + copyText);
+      }
     };
 
     main();
