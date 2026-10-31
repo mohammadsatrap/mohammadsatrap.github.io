@@ -33,6 +33,7 @@
   </head>
   <body>
     <button id="btn-copy" class="btn-copy">copy json data</button>
+    <button id="btn-show" class="btn-copy">show PDF file</button>
     <pre id="dataBlock" class="bg"></pre>
   </body>
 
@@ -241,15 +242,22 @@
       document
         .getElementById("btn-copy")
         .addEventListener("click", copyJsonData);
+      document
+        .getElementById("btn-show")
+        .addEventListener("click", openPdfFile);
 
       function copyJsonData() {
-        var copyText = JSON.stringify(data);
+        const copyText = JSON.stringify(data);
 
         // Copy the text inside the text field
         navigator.clipboard.writeText(copyText);
 
         // Alert the copied text
         alert("Copied the text: " + copyText);
+      }
+
+      function openPdfFile() {
+        window.open("./assets/pdfs/mohammadDinarvand.pdf", "_blank");
       }
     };
 
